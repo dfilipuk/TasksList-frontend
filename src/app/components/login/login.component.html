@@ -1,0 +1,15 @@
+<div align="center">
+    <mat-card class="login-form">
+        <mat-card-content>
+            <form>
+                <mat-form-field class="form-input">
+                    <input matInput name="login" [(ngModel)]="login" placeholder="Login" required #loginVal="ngModel">
+                </mat-form-field>
+                <mat-form-field class="form-input">
+                    <input matInput name="password" [(ngModel)]="password" placeholder="Password" type="password" required #passwordVal="ngModel">
+                </mat-form-field>
+                <button mat-button (click)="signIn()" [disabled]="loginVal.invalid || passwordVal.invalid">Sign In</button>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>

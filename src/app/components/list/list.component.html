@@ -1,0 +1,26 @@
+<div align="center">
+    <mat-card *ngIf="loaded" class="items-table">
+        <mat-table [dataSource]="items">
+            <ng-container matColumnDef="itemNum">
+                <mat-header-cell *matHeaderCellDef>№</mat-header-cell>
+                <mat-cell *matCellDef="let item">{{ item.num }}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="itemName">
+                <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
+                <mat-cell *matCellDef="let item">{{ item.name }}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="itemAuthor">
+                <mat-header-cell *matHeaderCellDef>Author</mat-header-cell>
+                <mat-cell *matCellDef="let item">{{ item.author }}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="itemPriority">
+                <mat-header-cell *matHeaderCellDef>Priority</mat-header-cell>
+                <mat-cell *matCellDef="let item">{{ item.priority }}</mat-cell>
+            </ng-container>
+            <mat-header-row *matHeaderRowDef="columnsToDisplay"></mat-header-row>
+            <mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></mat-row>
+        </mat-table>
+    </mat-card>
+    <mat-progress-spinner mode="indeterminate" *ngIf="!loaded"></mat-progress-spinner>
+    <button mat-button (click)="signOut()">Sign Out</button>
+</div>
