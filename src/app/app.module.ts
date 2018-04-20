@@ -9,6 +9,8 @@ import { MaterialComponents } from './material-components.module';
 import { FormsModule } from '@angular/forms';
 import { StorageService } from './services/storage.service';
 import { AuthorizationService } from './services/authorization.service';
+import { HttpClientModule } from '@angular/common/http';
+import { TaskService } from './services/task.service';
 
 @NgModule({
   declarations: [
@@ -19,9 +21,10 @@ import { AuthorizationService } from './services/authorization.service';
   imports: [
     MaterialComponents,
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [StorageService, AuthorizationService],
+  providers: [StorageService, AuthorizationService, TaskService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

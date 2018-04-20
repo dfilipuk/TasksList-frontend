@@ -2,6 +2,10 @@
     width: 70%;
 }
 
+.error-message {
+    width: 20%;
+}
+
 .mat-column-itemNum {
     flex: 0 0 5%;
 }

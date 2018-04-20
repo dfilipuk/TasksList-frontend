@@ -1,6 +1,6 @@
 <div align="center">
     <mat-card *ngIf="loaded" class="items-table">
-        <mat-table [dataSource]="items">
+        <mat-table [dataSource]="tasks">
             <ng-container matColumnDef="itemNum">
                 <mat-header-cell *matHeaderCellDef>№</mat-header-cell>
                 <mat-cell *matCellDef="let item">{{ item.num }}</mat-cell>
@@ -21,6 +21,8 @@
             <mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></mat-row>
         </mat-table>
     </mat-card>
-    <mat-progress-spinner mode="indeterminate" *ngIf="!loaded"></mat-progress-spinner>
+    <mat-card *ngIf="errorMessage" class="error-message">{{ errorMessage }}</mat-card>
+    <mat-progress-spinner mode="indeterminate" *ngIf="!loaded && !errorMessage"></mat-progress-spinner>
+    <button mat-button (click)="reloadData()">Reload</button>
     <button mat-button (click)="signOut()">Sign Out</button>
 </div>
