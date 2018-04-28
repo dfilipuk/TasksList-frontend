@@ -1,5 +1,4 @@
-<div>
-    <!-- <router-outlet></router-outlet> -->
-    <app-login *ngIf="!isUserAuthorized()"></app-login>
-    <app-list *ngIf="isUserAuthorized()"></app-list>
+<div class="main-container">
+    <app-login class="login-page-container" *ngIf="!isUserAuthorized()"></app-login>
+    <app-list class="list-page-container" *ngIf="isUserAuthorized()"></app-list>
 </div>

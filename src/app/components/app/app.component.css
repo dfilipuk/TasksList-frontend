@@ -1,0 +1,21 @@
+.main-container {
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.login-page-container {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.list-page-container {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}

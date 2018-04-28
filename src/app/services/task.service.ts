@@ -12,7 +12,7 @@ export class TaskService {
 
     public loadTasks(): Observable<Task[]> {
         return this.httpClient.get('http://localhost:5000/task/list')
-            .map(data => {
+            .map((data: any) => {
                 const tasks: Task[] = [];
 
                 data.map(element => {
